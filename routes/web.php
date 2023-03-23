@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return "re";
-});
+Route::get('/', [App\Http\Controllers\Post\PostController::class , 'index']);
+
 
 Route::get('/hello', function () {
   return view('hello');

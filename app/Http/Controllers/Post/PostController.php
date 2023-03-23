@@ -13,7 +13,8 @@ class PostController extends Controller
     public function index()
     {
         //
-      return "Index";
+//      return "Index";
+      return view('post.index');
     }
 
     /**
