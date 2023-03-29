@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Post;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -29,4 +29,12 @@ class PostRequest extends FormRequest
 
         ];
     }
+
+    public function messages() {
+      return [
+        'title.required' => 'Обязательно к заполнению',
+        'text.required' => 'Обязательно к заполнению',
+      ];
+    }
+
 }

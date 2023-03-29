@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Andrea - Free Bootstrap 4 Template by Colorlib</title>
+	<title>APP-gb</title>
 	<meta charset="utf-8">
 	<meta name="viewport"
 	      content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -46,18 +46,18 @@
 	<aside id="colorlib-aside" role="complementary" class="js-fullheight">
 		<nav id="colorlib-main-menu" role="navigation">
 			<ul>
-				<li class="colorlib-active"><a href="index.html">Home</a></li>
-				<li><a href="fashion.html">Fashion</a></li>
-				<li><a href="travel.html">Travel</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="contact.html">Contact</a></li>
-				<li><a href="#">Add Post</a></li>
+				<li class="colorlib-active"><a href="{{ route('post.index') }}">Home</a></li>
+				<li><a href="#">Fashion</a></li>
+				<li><a href="#">Travel</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="{{ route('post.create') }}">Add Post</a></li>
 			</ul>
 		</nav>
 		
 		<div class="colorlib-footer">
 			<h1 id="colorlib-logo" class="mb-4">
-				<a href="index.html"
+				<a href="{{ route('post.index') }}"
 				   style="background-image: url(images/bg_1.jpg);">Andrea<span>Moore</span></a>
 			</h1>
 			<div class="mb-4">
@@ -90,23 +90,6 @@
 						
 						{{--content--}}
 						@yield('content')
-						
-						
-						<div class="row">
-							<div class="col">
-								<div class="block-27">
-									<ul>
-										<li><a href="#">&lt;</a></li>
-										<li class="active"><span>1</span></li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">4</a></li>
-										<li><a href="#">5</a></li>
-										<li><a href="#">&gt;</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
 					</div>
 					<div class="col-xl-4 sidebar ftco-animate bg-light pt-5">
 						<div class="sidebar-box pt-md-4">
