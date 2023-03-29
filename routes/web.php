@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +14,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/clear', function() {
+  Artisan::call('cache:clear');
+  Artisan::call('config:cache');
+  Artisan::call('view:clear');
+  Artisan::call('route:clear');
+//  Artisan::call('backup:clean');
+  return "Кэш очищен.";
 });
 
+Route::get('/',           [App\Http\Controllers\Post\PostController::class , 'index'])    ->name('post.index');
+Route::get('/create',     [App\Http\Controllers\Post\PostController::class , 'create'])   ->name('post.create');
+Route::get('/{post}/edit',[App\Http\Controllers\Post\PostController::class , 'edit'])     ->name('post.edit');
+Route::get('/{post}',     [App\Http\Controllers\Post\PostController::class , 'show'])     ->name('post.show');
+Route::post('/',          [App\Http\Controllers\Post\PostController::class , 'store'])    ->name('post.store');
+Route::patch('/{post}',   [App\Http\Controllers\Post\PostController::class , 'update'])   ->name('post.update');
+Route::delete('/{post}',  [App\Http\Controllers\Post\PostController::class , 'delete'])   ->name('post.delete');
+
+
 Route::get('/hello', function () {
-    return 'Привет GB!';
+  return view('hello');
 });
 
 Route::get('/hello/{name}', function ($name) {
-    return 'Привет, ' . $name;
+  return 'Привет, ' . $name;
 });
+
+
