@@ -21,6 +21,18 @@
 			</div>
 			
 			<div class="form-group">
+				<label for="category_id">Категория:</label>
+				<select name="category_id" id="category_id" class="form-control">
+					
+					@foreach($categories as $category)
+						<option value="{{ $category->id }}"{{ old('category_id') == $category->id ? ' selected' : '' }}>
+							{{ $category->title }}
+						</option>
+					@endforeach
+				</select>
+			</div>
+			
+			<div class="form-group">
 				<input type="submit" value="Сохранить" class="btn btn-primary py-3 px-5">
 			</div>
 		</form>

@@ -29,6 +29,8 @@
 		</div>
 		<hr>
 		<div class="row pt-md-4">
+{{--			{{ dump($post->category) }}--}}
+			<p>Текущая категория: {{ $post->category->title }}</p>
 			<h1 class="mb-3">{{ $post->title }}</h1>
 			
 			

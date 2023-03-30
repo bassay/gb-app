@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Post;
+namespace App\Http\Requests\Category;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostRequest extends FormRequest
+class StoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,18 +24,6 @@ class PostRequest extends FormRequest
         return [
             //
           'title'=>'required|string',
-          'text'=>'required|string',
-          'author'=>'nullable|string',
-          'category_id'=>'required|integer',
-
         ];
     }
-
-    public function messages() {
-      return [
-        'title.required' => 'Обязательно к заполнению',
-        'text.required' => 'Обязательно к заполнению',
-      ];
-    }
-
 }

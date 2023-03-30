@@ -44,16 +44,7 @@
 	<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 	
 	<aside id="colorlib-aside" role="complementary" class="js-fullheight">
-		<nav id="colorlib-main-menu" role="navigation">
-			<ul>
-				<li class="colorlib-active"><a href="{{ route('post.index') }}">Home</a></li>
-				<li><a href="#">Fashion</a></li>
-				<li><a href="#">Travel</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-				<li><a href="{{ route('post.create') }}">Add Post</a></li>
-			</ul>
-		</nav>
+		@include('layout.nav')
 		
 		<div class="colorlib-footer">
 			<h1 id="colorlib-logo" class="mb-4">
@@ -101,19 +92,9 @@
 								</div>
 							</form>
 						</div>
-						<div class="sidebar-box ftco-animate">
-							<h3 class="sidebar-heading">Categories</h3>
-							<ul class="categories">
-								<li><a href="#">Fashion <span>(6)</span></a>
-								</li>
-								<li><a href="#">Technology <span>(8)</span></a>
-								</li>
-								<li><a href="#">Travel <span>(2)</span></a></li>
-								<li><a href="#">Food <span>(2)</span></a></li>
-								<li><a href="#">Photography <span>(7)</span></a>
-								</li>
-							</ul>
-						</div>
+						
+						@include('layout.nav-category')
+
 						
 						<div class="sidebar-box ftco-animate">
 							<h3 class="sidebar-heading">Popular Articles</h3>

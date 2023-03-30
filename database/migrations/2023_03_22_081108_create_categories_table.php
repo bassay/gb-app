@@ -13,10 +13,6 @@ return new class extends Migration {
     Schema::create('categories', function (Blueprint $table) {
       $table->id();
       $table->string('title');
-      $table->foreignId('post_id')
-        ->index()
-        ->constrained('post')
-        ->references('id');
       $table->timestamps();
     });
   }

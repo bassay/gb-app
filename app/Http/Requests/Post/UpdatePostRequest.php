@@ -26,7 +26,7 @@ class UpdatePostRequest extends FormRequest
           'title'=>'required|string',
           'text'=>'required|string',
           'author'=>'nullable|string',
-
+          'category_id'=>'required|integer',
         ];
     }
 

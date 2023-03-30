@@ -23,6 +23,15 @@ Route::get('/clear', function() {
   return "Кэш очищен.";
 });
 
+
+Route::get('/category',                 [App\Http\Controllers\Category\CategoryController::class , 'index'])    ->name('category.index');
+Route::get('/category/create',          [App\Http\Controllers\Category\CategoryController::class , 'create'])   ->name('category.create');
+Route::post('/category',                [App\Http\Controllers\Category\CategoryController::class , 'store'])    ->name('category.store');
+Route::get('/category/{category}/edit', [App\Http\Controllers\Category\CategoryController::class , 'edit'])     ->name('category.edit');
+Route::patch('/category/{category}',    [App\Http\Controllers\Category\CategoryController::class , 'update'])   ->name('category.update');
+Route::delete('/category/{category}',   [App\Http\Controllers\Category\CategoryController::class , 'destroy'])  ->name('category.destroy');
+
+
 Route::get('/',           [App\Http\Controllers\Post\PostController::class , 'index'])    ->name('post.index');
 Route::get('/create',     [App\Http\Controllers\Post\PostController::class , 'create'])   ->name('post.create');
 Route::get('/{post}/edit',[App\Http\Controllers\Post\PostController::class , 'edit'])     ->name('post.edit');

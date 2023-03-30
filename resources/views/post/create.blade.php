@@ -18,6 +18,19 @@
 				<textarea name="text"  placeholder="Текст поста" cols="30" rows="7" class="form-control">{{ old('text') }}</textarea>
 				@error('text')<p style="color: darkred">*{{ $message }}</p>@enderror
 			</div>
+			
+			<div class="form-group">
+				<label for="category_id">Категория:</label>
+				<select name="category_id" id="category_id" class="form-control">
+					
+					@foreach($categories as $category)
+{{--						<option value="{{ $category->id }}">{{ $category->title }}</option>--}}
+						<option value="{{ $category->id }}"{{ old('category_id') == $category->id ? ' selected' : '' }}>
+							{{ $category->title }}
+						</option>
+					@endforeach
+				</select>
+			</div>
 
 			<div class="form-group">
 				<input type="submit" value="Добавить" class="btn btn-primary py-3 px-5">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Post;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Post\PostRequest;
 use App\Http\Requests\Post\UpdatePostRequest;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -22,13 +23,16 @@ class PostController extends Controller {
    * Show the form for creating a new resource.
    */
   public function create() {
-    return view('post.create');
+    $categories = Category::all();
+//    dd($categories->toArray());
+    return view('post.create' , compact('categories'));
   }
 
   /**
    * Store a newly created resource in storage.
    */
   public function store(PostRequest $request) {
+//    dd($request);
     $data = $request->validated();
     Post::create($data);
     return redirect()->route('post.index');
@@ -45,7 +49,8 @@ class PostController extends Controller {
    * Show the form for editing the specified resource.
    */
   public function edit(Post $post) {
-    return view('post.edit', compact('post'));
+    $categories = Category::all();
+    return view('post.edit', compact('post', 'categories'));
   }
 
   /**
