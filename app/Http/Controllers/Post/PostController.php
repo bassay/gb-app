@@ -15,8 +15,11 @@ class PostController extends Controller {
    * Display a listing of the resource.
    */
   public function index() {
+
     $posts = Post::paginate(3);
-    return view('post.index', compact('posts'));
+    $categories = Category::all();
+//    dd($posts);
+    return view('post.index', compact('posts' , 'categories'));
   }
 
   /**

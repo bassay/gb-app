@@ -1,7 +1,6 @@
 @extends('layout.main')
 
 @section('content')
-	
 	{{-- start post --}}
 	@foreach($posts as $post)
 		<div class="row pt-md-4">
@@ -22,7 +21,7 @@
 								<span><i class="icon-calendar mr-2"></i>{{ $post->created_at }}</span>
 								<span>
 									<a href="{{ route('post.show', $post->id ) }}">
-										<i class="icon-folder-o mr-2"></i>Travel-Category
+										<i class="icon-folder-o mr-2"></i>{{ $post->category->title }}
 									</a>
 								</span>
 								<span><i class="icon-comment2 mr-2"></i>Автор: {{ $post->author }}</span>
